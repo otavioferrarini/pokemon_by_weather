@@ -60,7 +60,7 @@ def byweather(request):
 		
 	pkmndados = requests.get(pdados['pokemon'][rndm]['pokemon']['url']).json()
 		
-	#tenta colocar o tipo secundário so pokémon, se existir
+	#tenta colocar o tipo secundário do pokémon, se existir
 	try:
 		tipo2 = pkmndados['types'][1]['type']['name']
 	except IndexError:
