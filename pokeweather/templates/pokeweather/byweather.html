@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Byweather</title>
+		<meta charset="utf-8">	
+	</head>
+	<body>
+		{{ err }}
+		<h1> <center> Pokémon na cidade de {{ city }} </center> </h1>
+		<p> <center> <img src={{ img }} style="width:256px;height:256px;" alt='imagem não disponível'> </center> </p>
+		<p> <center> {{ pokemon }} </center> </p>
+		<p> <center> 
+		{% if tipo2 %}
+			{{ tipo }}/{{ tipo2 }}
+		{% else %}
+			{{ tipo }}
+		{% endif %} 
+		</center> </p>
+		<br>
+		<p> <center> Em {{ city }} está fazendo {{ temp }}°C e  
+		{% if clima %}
+			não está chovendo.
+		{% else %}
+			está chovendo.
+		{% endif %}
+		</center> </p>
+		<br>
+		<form action="/pokeweather/byweather" method="get">
+		    <label for='cidade'> Insira outra {{ wform }} </label>
+		    
+		    <input type="submit" value="OK">
+		</form>
+	</body>
+</html>
